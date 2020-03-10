@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Ammo_Pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Target.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://R01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://L01.tscn" type="PackedScene" id=5]
+[ext_resource path="res://img/Planks021_2K_Roughness.jpg" type="Texture" id=6]
+[ext_resource path="res://img/Planks021_2K_Normal.jpg" type="Texture" id=7]
+[ext_resource path="res://img/Planks021_2K_Color.jpg" type="Texture" id=8]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 8 )
+roughness_texture = ExtResource( 6 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 7 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="UBU Scene" type="Spatial"]
+
+[node name="Spatial" parent="." instance=ExtResource( 3 )]
+
+[node name="w1" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0.177, 25, 112.545 )
+
+[node name="w2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0.177, 25, -86.3932 )
+
+[node name="w4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, -98.998, 25, -0.239785 )
+
+[node name="w3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 99.509, 25, 0.734 )
+
+[node name="Target_Whole3" parent="w3" instance=ExtResource( 2 )]
+transform = Transform( 1.96701e-07, 0, -1.5, 0, 0.75, 0, 1.5, 0, 1.96701e-07, -197.279, 4.70218, 56.0741 )
+
+[node name="Target_Whole" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.9357, 0, -42.0411 )
+
+[node name="Target_Whole2" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -61.3375, -2.66409, -131.23 )
+
+[node name="Target_Whole" parent="w3/Target_Whole3/Target_Whole2" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 21.2157, 0, -1.42796 )
+
+[node name="Target_Whole3" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -103.955, 0, -37.1013 )
+
+[node name="Target_Whole4" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -46.5372, -4.33268, 0.246101 )
+
+[node name="Target_Whole5" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3185, 0, 0.539894 )
+
+[node name="Target_Whole6" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+
+[node name="Target_Whole7" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+
+[node name="Target_Whole8" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( 2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 28.0248, 5.94234, -22.1144 )
+
+[node name="Target_Whole9" parent="w3/Target_Whole3" instance=ExtResource( 2 )]
+transform = Transform( 2.62203e-07, -5.842e-09, 2, 0.0445498, 1.9995, 0, -1.9995, 0.0445498, 2.62268e-07, 25.3244, 0.69696, -88.8596 )
+
+[node name="Ammo_Pickup" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4176, 2.68518, 64.1859 )
+
+[node name="Ammo_Pickup" parent="Ammo_Pickup" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -101.7, 8.67213, -79.2041 )
+
+[node name="Target_Whole" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2, 0, -4.52987e-07, 0, 3, 0, 3.01992e-07, 0, -3, 30.7876, 29.7664, -98.6432 )
+
+[node name="Spatial2" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -48.947, 5, -13.314 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Spatial2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="Spatial2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/MeshInstance/StaticBody2"]
+shape = SubResource( 4 )
